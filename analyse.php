@@ -47,7 +47,7 @@ function fruit()
 // }
 
 
-function findproduct($idproduct)
+function findproduct($idproduct) //On vas trouver toutes les informations necessaire
 {
 	$fruit = fruit();
 	$legume = legume();
