@@ -1,13 +1,13 @@
 <?php
    require_once("traitement.php");
-   //$panier = panier();
+   $panier = $_COOKIE['panier'];
 ?>
 
 <style>
         .formu {
             position:absolute;
             top:30%;
-            left:30%;
+            left:45%;
         }
 
         .title {
@@ -44,12 +44,12 @@
         }
 
     </style>
-    <h2 class="title">Votre Panier, enregistré sous le nom de <?php // echo $_SESSION['user']. " " ; ?> .</h2>
+    <h2 class="title">Votre Panier, est enregistré sous le nom de <?php echo $_COOKIE['user']; ?> .</h2>
     <form class="formu" method="GET">
         <article class="forecast">
             <h1><a href="index.php?action=fruit">Les Fruits :</a></h1>
             <article class="day-forecast">
-            <?php //foreach($panier as $product) { ?>
+            <?php foreach($panier as $product) { ?>
                     <h2><?php echo ""; ?></h2>
                     <p><?php $cerise = 3.29; ?></p>
                     <!--<input type="number" min ="0" max="10" name="quantiter" value="0">-->
@@ -88,7 +88,7 @@
         -->
         <article class="forecast">
             <article class="day-forecast">
-               <button><a href="index.php?action=commander">Commander</a></button><button><a href="index.php?action=supprimer">Supprimer</a></button>
+               <button><a href="index.php?action=commander">Commander</a></button><button><a href="index.php?action=supprimer&supp=click">Supprimer</a></button>
             </article>
         </article>
         <article class="forecast">

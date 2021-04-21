@@ -1,14 +1,14 @@
 <?php
 require_once('traitement.php');
 
+
 if (isset($_GET['envoyer']))
 {
     if (!empty($_GET['nom']) && !empty($_GET['prenom']) && !empty($_GET['adresse']))
     {
-        $user = null;
-        user($user, $_GET['prenom'], $_GET['nom'], $_GET['adresse']);
+        utilisateur($_GET['prenom'], $_GET['nom'], $_GET['adresse']);
         $msgsucces = "Connexion établi ! ". $_COOKIE["user"];
-        header("refresh:5;url=index.php?action=marcher.php");
+        header("refresh:50;url=index.php?action=marcher.php");
     }
     else
     {
@@ -18,7 +18,7 @@ if (isset($_GET['envoyer']))
 
 ?>
 
-<?php include '../header/header.php'; ?>
+<?php //include '../header/header.php'; ?>
 
 <div id="container-2">
     <div class="message">

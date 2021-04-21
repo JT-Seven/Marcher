@@ -7,6 +7,9 @@ if (isset($_GET["action"]))
         case "connexion.php":
             $page ="marcher.php";
             break;
+        case "supprimer":
+            $page ="panier.php";
+            break;
         case "ajouter":
             $page ="panier.php";
             break;

@@ -1,6 +1,5 @@
 <?php
     // require_once("traitement.php");
-    // $stock =  ajouterproduit(2);
+    // $stock =  ajouternewprod();
     // var_dump($stock);
-
 ?>
