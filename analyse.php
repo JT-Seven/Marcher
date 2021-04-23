@@ -23,5 +23,20 @@ function allproduct()
 		return $stock;
 }
 
+function findproduct($idproduct, $prix)
+{
+	$stock = allproduct();
+	foreach($stock as $val)
+	{
+		if ($idproduct == $val['id'] && $prix = $val['price'])
+		{
+			$idproduct = $val['id'];
+			$prix = $val['price'];
+			$data = array($idproduct, $prix);
+			return $data;
+		}
+	}
+	return false;
+}
 
 ?>

@@ -1,4 +1,5 @@
 <?php
+    require_once("traitement.php");
     require_once("analyse.php");
     $stock = allproduct();
 ?> 

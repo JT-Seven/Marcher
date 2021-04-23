@@ -6,9 +6,20 @@ if (isset($_GET['envoyer']))
 {
     if (!empty($_GET['nom']) && !empty($_GET['prenom']) && !empty($_GET['adresse']))
     {
+        $prenom2 = $_GET['prenom'];
         utilisateur($_GET['prenom'], $_GET['nom'], $_GET['adresse']);
         $msgsucces = "Connexion établi ! ". $_COOKIE["user"];
-        header("refresh:50;url=index.php?action=marcher.php");
+        if ($prenom2 != $_COOKIE["user"])
+        {
+            setCookie("user",$prenom2,time()+ 3600 * 24 * 365);
+            $_COOKIE["user"] = strval($prenom2);
+            $msgsucces = "Connexion établi ! ". $_COOKIE["user"];
+            header("refresh:3;url=index.php?action=marcher.php");
+        }
+        else 
+        {
+          header("refresh:3;url=index.php?action=marcher.php");
+        }
     }
     else
     {
@@ -17,8 +28,6 @@ if (isset($_GET['envoyer']))
 }
 
 ?>
-
-<?php //include '../header/header.php'; ?>
 
 <div id="container-2">
     <div class="message">

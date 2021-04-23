@@ -10,7 +10,7 @@ if (isset($_GET["action"]))
         case "supprimer":
             $page ="panier.php";
             break;
-        case "ajouter":
+        case "ajoutercart":
             $page ="panier.php";
             break;
         case "marcher":
